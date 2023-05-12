@@ -1,0 +1,125 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: $leftSide-width;
+    right: $rightSide-width;
+    padding: 3.4rem 3rem 1.5rem 3rem;
+    z-index: 11;
+    @include flex(flex-end, space-between);
+    gap: 3rem;
+    transition: padding 0.25s ease;
+    &.shrink{
+        background-color: $second-color;
+        padding: 2rem 2.6rem 1.6rem 1.5rem;
+    }
+    &.full{
+        right: 0;
+        .header__right{
+            width: 50%;
+            @include mobile{
+                width: 35%;
+            }
+        }
+        .header__left{
+            width: 25%;
+            .notification{
+                width: 100%;
+            }
+            @include tablet{
+                width: 40%;
+            }
+            @include mobile{
+                width: 60%;
+            }
+        }
+    }
+    @include tablet{
+        right: 0;
+        .header__right{
+            width: 50%;
+        }
+        .header__left{
+            width: 40%;
+        }
+        left: $leftSide-width-responsive;
+        padding: 3.4rem 3rem 1.5rem 1.5rem;
+    }
+    @include mobile{
+        left: $leftSide-width-sm;
+        padding: 3.4rem 1rem 1rem 1.5rem;
+    }
+    &__left{
+        @include flex(unset, unset);
+        gap: 0 4.6rem;
+        font-size: 2rem;
+        color:$txt-white;
+        @include tablet{
+            font-size: 1.6rem;
+            gap: 0 2rem;
+        }
+        &__item{
+            padding-bottom: 1rem;
+            &.active{
+                border-bottom: 2px solid $main-color;
+            }
+            @include tablet{
+                gap: 2rem;
+            }
+            @include mobile {
+                a{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+    &__right{
+        position: relative;
+        width: 50%;
+        input{
+            padding: 1.4rem 2rem;
+            background-color: $bg-input;
+            border: 1px solid rgba(249, 249, 249, 0.1);
+            border-radius: 10px;
+            font-size: 1.8rem;
+            color: $txt-white;
+            width: 100%;
+            @include mobile{
+                padding: 1.2rem 2rem;
+                border-radius: 3px;
+            }
+            text-transform: none;
+        }
+        .img-search{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2rem;
+            cursor: pointer;
+            @include mobile{
+                right: 1rem;
+                width: 1.6rem;
+            }
+        }
+        &__result{
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            left: 0;
+            transform: translateY(-5%);
+            background-color: #1a1a1c;
+            max-height: 200px;
+            overflow: auto;
+            transition: all 0.2s ease-in;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding-top: 2rem;
+            z-index: -1;
+            h2{
+                text-align: center;
+                color: $txt-white;
+                font-size: 1.6rem;
+                padding-bottom: 1.5rem;
+            }
+        }
+    }
+}

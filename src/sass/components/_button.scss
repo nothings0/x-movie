@@ -1,0 +1,102 @@
+.btn {
+  border: 0;
+  outline: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+  @include flex(center, center);
+  z-index: 1;
+  &__txt,
+  &__icon {
+    display: block;
+  }
+
+  &__txt {
+    padding: 1.2rem 2.2rem;
+    @include tablet {
+      padding: 1rem 1.6rem;
+    }
+    @include mobile {
+      padding: 0.8rem 1.4rem;
+    }
+  }
+
+  &__icon {
+    padding: 1.2rem;
+    @include tablet {
+      padding: 1rem;
+    }
+    @include mobile {
+      padding: 0.8rem;
+    }
+    & > img {
+      width: unset !important;
+      height: unset !important;
+    }
+  }
+  &.bg-blur {
+    background: rgba(249, 249, 249, 0.2);
+    backdrop-filter: blur(10px);
+    .btn__icon {
+      @include mobile{
+        padding: 0.4rem;
+      }
+    }
+    .btn__txt{
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: $txt-white;
+    }
+    
+  }
+  &.bg-outline {
+    background: transparent;
+    border: 1px solid $txt-white;
+    .btn__txt {
+      color: $txt-white;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+  }
+  &.bg-main {
+    background: $main-color;
+    width: 100%;
+    .btn__txt {
+      color: $bg-color;
+      font-size: 1.6rem;
+      font-weight: 800;
+      @include mobile{
+        font-size: 1rem;
+        padding: 1rem;
+      }
+    }
+    
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #009288;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 2px 0px #009288;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    .btn__txt{
+        color: #fff;
+    }
+  }
+  &:hover:after {
+    left: 0;
+    width: 100%;
+  }
+  &:active {
+    top: 2px;
+  }
+}

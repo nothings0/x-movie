@@ -1,0 +1,80 @@
+.notification{
+    @include flex(center, space-between);
+    gap: 0 4rem;
+    @include tablet{
+        justify-content: flex-end;
+        gap: 0 4rem;
+    }
+    @include mobile{
+        gap: 0;
+    }
+    &__bell{
+        padding: 1rem 1.3rem;
+        background: rgba(249, 249, 249, 0.2);
+        border-radius: 15px;
+        @include mobile{
+            img{
+                width: 2rem;
+            }
+            padding: 0.5rem 1rem;
+            border-radius: 5px; 
+        }
+    }
+
+    &__info{
+        @include flex(center, space-between);
+        gap: 0 1rem;
+        @include mobile{
+            img{
+                width: 3rem;
+            }
+            padding: 0.5rem 1rem;
+            border-radius: 5px; 
+        }
+        &__txt{
+            @include flex(center, space-between);
+            gap: 0 1rem;
+            &__name{
+                font-size: 1.6rem;
+                color: $txt-white;
+            }
+            &__icon{
+                @include mobile{
+                    img{
+                        width: 2rem;
+                    }
+                }
+            }
+        }
+        &__img{
+            position: relative;
+            cursor: pointer;
+            &__toggle{
+                position: absolute;
+                top: 110%;
+                right: 0;
+                width: 150px;
+                background-color: $bg-color;
+                z-index: 10;
+                border-radius: 10px;
+                display: none;
+                &__item{
+                    @include flex(center, unset);
+                    gap: 0 2rem;
+                    padding: 1rem 1.5rem;
+                    span{
+                        color: $txt-white;
+                        font-size: 1.6rem;
+                        cursor: pointer;
+                        &:hover{
+                            color: $main-color;
+                        }
+                    }
+                }
+                &.active{
+                    display: block;
+                }
+            }
+        }
+    }
+}

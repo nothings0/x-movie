@@ -1,0 +1,9 @@
+.setting{
+    @include flex(center, center);
+    min-height: 100vh;
+    flex-direction: column;
+    h2{
+        font-size: 4rem;
+        color: #fff;
+    }
+}

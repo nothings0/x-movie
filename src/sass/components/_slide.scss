@@ -1,0 +1,217 @@
+.slide{
+    &__heading{
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        @include flex(center, space-between);
+        &__left{
+            @include flex(center, space-between);
+            gap: 0 1.4rem;
+            &__title{
+                font-size: 2.2rem;
+                color: $txt-white;
+            }
+            &__control{
+                @include flex(center, space-between);
+                gap: 0 1.4rem;
+            }
+        }
+        &__right{
+            @include flex(center, space-between);
+            gap: 0 1.4rem;
+            cursor: pointer;
+            &__txt{
+                font-size: 1.4rem;
+                color: #f9f9f9ab;
+                font-weight: 400;
+            }
+        }
+    }
+    .slide__wrap {
+
+        border-radius: 10px;
+        .slide__card{
+            width: 100%;
+            background-color: $bg-color;
+            position: relative;
+            &__top{
+                @include flex(center, space-between);
+                padding: 1rem;
+                gap: 0 2rem;
+                &__img{
+                    width: 7rem;
+                    height: 8rem;
+                    & > img{
+                        width: 100% !important;
+                        height: 100% !important;
+                        object-fit: cover;
+                        border-radius: 10px;
+                        image-rendering: pixelated;
+                    }
+                }
+                &__txt{
+                    flex: 1;
+                    @include flex(flex-start, space-between);
+                    height: 8rem;
+                    flex-direction: column;
+                    &__heading{
+                        font-size: 1.8rem;
+                        color: $txt-white;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    &__des{
+                        font-size: 1.4rem;
+                        color: $txt-white;
+                    }
+                    .line{
+                        width: 100%;
+                        height: 3px;
+                        background-color: $main-color;
+                        border-radius: 5rem;
+                        position: relative;
+                        .range{
+                            position: absolute;
+                            content: "";
+                            height: 100%;
+                            right: 0;
+                            background-color: $txt-white;
+                            border-radius: 5rem;
+                        }
+                    }
+                }
+            }
+            &__bottom{
+                @include flex(center, unset);
+                gap: 0 2rem;
+                padding: 0 1rem 1rem 1rem;
+                &__btn__1{
+                    width: 7rem;
+                    & > .btn .btn__txt{
+                        padding: 1rem;
+                    }
+                }
+                &__btn__2{
+                    flex: 1;
+                    & > .btn{
+                        width: 100%;
+                    }
+                    & > .btn .btn__txt{
+                        padding: 1rem;
+                    }
+                }
+                &.type_two{
+                    position: absolute;
+                    bottom: 1rem;
+                    left: 1rem;
+                    right: 1rem;
+                    z-index: 11;
+                    padding: unset;
+                }
+            }
+            & > img{
+                background-position: center;
+                background-size: cover;
+                height: unset !important;
+            }
+            &__linear{
+                background: linear-gradient(0deg, rgba(22, 24, 30, 0.7), rgba(22, 24, 30, 0.7));
+                position: absolute;
+                inset: 0;
+                z-index: 10;
+            }
+            &__container{
+                position: absolute;
+                inset: 0;
+                border-radius: 10px;
+                z-index: 11;
+            }
+            &__text{
+                &__heading{
+                    font-size: 1.8rem;
+                    color: $txt-white;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    padding: 2rem 1rem 1rem 1rem;
+                }
+                &__des{
+                    color: $txt-white;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    padding: 1.5rem 1rem;
+                    @include flex(center, space-between);
+                    & > h3, & > p{
+                        font-weight: 400;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        // &__btn__1{
+        //     position: absolute;
+        //     bottom: 2rem;
+        //     left: 1.4rem;
+        //     z-index: 10;
+        // }
+        // &__btn__2{
+        //     position: absolute;
+        //     bottom: 2rem;
+        //     right: 1.4rem;
+        //     z-index: 10;
+        // }
+        .swiper-wrapper{
+            overflow-x: visible !important;
+        }
+    
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-slide {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            border-radius: 1rem;
+            &.swiper-slide-active > .banner__wrap > .banner__title{
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: unset !important;
+            padding: 0.8rem 1.2rem;
+            background: rgba(249, 249, 249, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 5px;
+        }
+        .swiper-pagination-bullet{
+            width: 1rem;
+            height: 1rem;
+            background-color: $txt-white !important;
+            opacity: unset !important;
+            &-active{
+                background-color: $main-color !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.main{
+    background-color: $bg-color;
+    margin-left: $leftSide-width;
+    @include tablet{
+        margin-left: $leftSide-width-responsive;
+    }
+    @include mobile{
+        margin-left: $leftSide-width-sm;
+    }
+    &-left{
+        margin-right: $rightSide-width;
+        background-color: #16181E;
+        padding: 3.4rem 3rem;
+        @include tablet{
+            margin-right: 0;
+            padding: 3.4rem 2.4rem;
+        }
+        @include mobile{
+            padding: 3.4rem 1.4rem;
+        }
+        
+    }
+    &__content{
+        margin-top: 9rem;
+    }
+}

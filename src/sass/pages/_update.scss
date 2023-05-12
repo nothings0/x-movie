@@ -1,0 +1,42 @@
+.updating{
+    width: 100%;
+    // height: calc(100vh - 10rem);
+    @include flex(center, center);
+    .custom{
+        @include flex(flex-end, center);
+        gap: 2rem;
+    }
+    .balls {
+        display: flex;
+        padding-bottom: 1rem;
+    }
+    
+    .ball {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $txt-white;
+        margin-right: 10px;
+        animation: ball 0.5s ease infinite alternate;
+    }
+    
+    .ball2 {
+        animation-delay: 0.1s;
+    }
+    
+    .ball3 {
+        animation-delay: 0.2s;
+    }
+    
+    @keyframes ball {
+        to {
+            transform: translateY(-10px);
+        }
+    }
+    
+    .customText {
+        font-weight: 500;
+        font-size: 6rem;
+        color: $txt-white;
+    }
+}

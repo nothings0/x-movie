@@ -1,0 +1,11 @@
+.right-side{
+    background-color: $second-color;
+    width: $rightSide-width;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    @include tablet{
+        display: none;
+    }
+}

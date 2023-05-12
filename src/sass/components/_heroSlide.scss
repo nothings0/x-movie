@@ -1,0 +1,109 @@
+.banner {
+    position: relative;
+    &__linear{
+        position: absolute;
+        inset: 0;
+        z-index: 9;
+        background: linear-gradient(90deg, rgba(22, 24, 30, 0.5), rgba(22, 24, 30, 0.5));
+    }
+    &__wrap{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    &__title{
+        position: absolute;
+        top: 2.2rem;
+        left: 2.2rem;
+        z-index: 100;
+        font-weight: 800;
+        font-size: 3.2rem;
+        color: $txt-white;
+        transform: translateX(-200%);
+        opacity: 0;
+        transition: 0.5s linear;
+    }
+    &__btn__1{
+        position: absolute;
+        bottom: 2rem;
+        left: 1.4rem;
+        z-index: 10;
+        @include mobile{
+            display: none;
+        }
+    }
+    &__btn__2{
+        position: absolute;
+        bottom: 2rem;
+        right: 1.4rem;
+        z-index: 10;
+        @include mobile{
+            display: none;
+        }
+    }
+    .swiper-wrapper{
+        overflow-x: visible !important;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        border-radius: 1rem;
+        overflow: hidden;
+        &.swiper-slide-active > .banner__wrap > .banner__title{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: unset !important;
+        padding: 0.8rem 1.2rem;
+        background: rgba(249, 249, 249, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 5px;
+        @include tablet{
+            bottom: 2.5rem;
+        }
+        @include tablet{
+            bottom: 2rem;
+        }
+    }
+    .swiper-pagination-bullet{
+        width: 1rem;
+        height: 1rem;
+        background-color: $txt-white !important;
+        opacity: unset !important;
+        &-active{
+            background-color: $main-color !important;
+        }
+    }
+}

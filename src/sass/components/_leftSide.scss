@@ -1,0 +1,75 @@
+.left-side{
+    width: $leftSide-width;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 3.4rem 0 0 3.4rem;
+    background-color: $second-color;
+    overflow-y: hidden;
+    z-index: 11;
+    @include tablet{
+        width: $leftSide-width-responsive;
+    }
+    @include mobile{
+        width: $leftSide-width-sm;
+        padding: 3.4rem 0 0 0;
+        overflow-y: unset;
+    }
+    &__logo{
+        padding-left: 1rem;
+        @include mobile{
+            img{
+                width: 4.5rem;
+            }
+        }
+    }
+    &__link{
+        margin-top: 2.8rem;
+        &__heading{
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: $txt-white;
+            margin-bottom: 1.2rem;
+            padding-left: 1rem;
+            @include mobile{
+                display: none;
+            }
+        }
+        &__item {
+            padding: 1.2rem 0 1.2rem 1rem;
+            margin: 0.7rem 0;
+            position: relative;
+            @include flex(center, unset);
+            gap: 0 1.2rem;
+            border-bottom-left-radius: 1rem;
+            border-top-left-radius: 1rem;
+            &__text{
+                font-size: 1.6rem;
+                color: $txt-white;
+                font-weight: 500;
+                @include mobile{
+                    display: none;
+                }
+            }
+            img{
+                width: 2.6rem;
+            }
+            &:hover{
+                background-color: $bg-color
+            }
+            &.active::before{
+                content: "";
+                position: absolute;
+                height: 70%;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 3px;
+                background-color: $main-color;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+}
